@@ -5,33 +5,46 @@
       type="text"
       class="form-control"
       id="floatingDescription"
+      [(ngModel)]="newElement.description"
       placeholder
     />
     <label for="floatingDescription">Description</label>
   </div>
-  <select class="form-select mb-3" aria-label="Default select example">
+  <select
+    class="form-select mb-3"
+    aria-label="Default select example"
+    [(ngModel)]="newElement.priority"
+  >
     <option selected disabled>Priority</option>
     <option value="1">Low</option>
     <option value="2">Mid</option>
     <option value="3">High</option>
   </select>
-  <button class="btn btn-primary mb-3" type="submit">Button</button>
+  <button (click)="addElement()" class="btn btn-primary mb-3" type="submit" *ngIf="newElement.description !== ''">
+    Add
+  </button>
 
-  <div class="card p-1">
-  
+  <hr>
+
+  <div class="card p-1 mb-3" *ngFor="let todolist of todoListArray; index as i">
     <div class="d-flex justify-content-between">
-      <h2>hola</h2>
-    <button type="button" class="btn-close mt-1" disabled aria-label="Close"></button>
+      <h2>{{ i + 1 }} - {{ todolist.description }}</h2>
+      <button
+        type="button"
+        class="btn-close mt-1"
+        aria-label="Close"
+        (click)="terminateElement(i)"
+      ></button>
     </div>
-    <p class="low-priority">Low</p>
-    <p class="mid-priority">Mid</p>
-    <p class="high-priority">High</p>
+    <div [ngSwitch]="todolist.priority">
+      <p class="low-priority" *ngSwitchCase="1">Low</p>
+      <p class="mid-priority" *ngSwitchCase="2">Mid</p>
+      <p class="high-priority" *ngSwitchCase="3">High</p>
+    </div>
   </div>
-
-  
-
 </div>
 
 <footer class="container text-center mt-5 text-bg-light p-3">
-Made with ❤️ by <a href="https://github.com/zonarolo">@zonarolo</a>  in <span>{{name}}</span>
+  Made with ❤️ by <a href="https://github.com/zonarolo">@zonarolo</a> in
+  <span>{{ name }}</span>
 </footer>

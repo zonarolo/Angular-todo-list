@@ -10,18 +10,22 @@ body {
 }
 
 .low-priority {
-  background-color: yellow;
+  background-color: lightgreen;
   border-radius: 16px;
 }
 
 .mid-priority {
-  background-color: lightgreen;
+  background-color: yellow;
   border-radius: 16px;
 }
 
 .high-priority {
   background-color: red;
   border-radius: 16px;
+}
+
+.btn , .btn-close {
+  cursor: auto;
 }
 
 footer { 
@@ -43,3 +47,5 @@ footer > span {
   color: red;
   text-decoration: underline;
 }
+
+
