@@ -1,4 +1,37 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="container text-center">
+  <h1 class="text-center mt-5">Todo List</h1>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="floatingDescription"
+      placeholder
+    />
+    <label for="floatingDescription">Description</label>
+  </div>
+  <select class="form-select mb-3" aria-label="Default select example">
+    <option selected disabled>Priority</option>
+    <option value="1">Low</option>
+    <option value="2">Mid</option>
+    <option value="3">High</option>
+  </select>
+  <button class="btn btn-primary mb-3" type="submit">Button</button>
+
+  <div class="card p-1">
+  
+    <div class="d-flex justify-content-between">
+      <h2>hola</h2>
+    <button type="button" class="btn-close mt-1" disabled aria-label="Close"></button>
+    </div>
+    <p class="low-priority">Low</p>
+    <p class="mid-priority">Mid</p>
+    <p class="high-priority">High</p>
+  </div>
+
+  
+
+</div>
+
+<footer class="container text-center mt-5 text-bg-light p-3">
+Made with ❤️ by <a href="https://github.com/zonarolo">@zonarolo</a>  in <span>{{name}}</span>
+</footer>
